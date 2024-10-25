@@ -80,6 +80,8 @@ def main():
         print_stats(log_stats)
         sys.exit(0)
 
+    print_stats(log_stats)
+
 
 if __name__ == "__main__":
     main()
