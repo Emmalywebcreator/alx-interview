@@ -52,6 +52,9 @@ def parse_log_line(line, log_stats):
         '''Update status code count if it's one of the expected ones'''
         if status_code in log_stats['status_codes_count']:
             log_stats['status_codes_count'][status_code] += 1
+    else:
+        '''Increment skipped_lines count for lines that do not match'''
+        log_stats['skipped_lines'] += 1
 
 
 def print_stats(log_stats):
