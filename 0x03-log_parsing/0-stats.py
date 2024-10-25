@@ -26,7 +26,7 @@ def initialize_log():
             '405': 0,
             '500': 0
         },
-        'line_count': 0
+        'line_count': 0,
         'skipped_lines': 0
     }
 
