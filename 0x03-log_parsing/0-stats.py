@@ -27,6 +27,7 @@ def initialize_log():
             '500': 0
         },
         'line_count': 0
+        'skipped_lines': 0
     }
 
 
@@ -59,8 +60,11 @@ def print_stats(log_stats):
     """
     print(f"File size: {log_stats['total_file_size']}")
     for code in sorted(log_stats['status_codes_count'].keys()):
-        if log_stats['status_codes_count'][code] > 0:
-            print(f"{code}: {log_stats['status_codes_count'][code]}")
+        count = log_stats['status_codes_count'][code]
+        if count > 0:
+            print(f"{code}: {count}")
+    if  log_stats['skipped_line'] > 0:
+        print(f"Skipped lines: [log_stats['skipped_lines']}")
 
 
 def main():
@@ -72,14 +76,14 @@ def main():
             log_stats['line_count'] += 1
             parse_log_line(line, log_stats)
 
-            # Print stats every 10 lines
+            '''Print stats every 10 lines'''
             if log_stats['line_count'] % 10 == 0:
                 print_stats(log_stats)
 
     except KeyboardInterrupt:
         print_stats(log_stats)
         sys.exit(0)
-
+    '''print remaining stats after all lines ave been processed'''
     print_stats(log_stats)
 
 
