@@ -64,7 +64,7 @@ def print_stats(log_stats):
         if count > 0:
             print(f"{code}: {count}")
     if log_stats['skipped_lines'] > 0:
-        print(f"Skipped lines: [log_stats['skipped_lines']}")
+        print(f"Skipped lines: {log_stats['skipped_lines']}")
 
 
 def main():
