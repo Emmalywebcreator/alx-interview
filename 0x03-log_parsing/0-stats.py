@@ -53,7 +53,8 @@ def parse_log_line(line, log_stats):
             log_stats['status_codes_count'][status_code] += 1
     else:
         '''Increment skipped_lines count for lines that do not match'''
-        sys.stderr.write(f"Skipped lin: {line"}
+        sys.stderr.write(f"Skipped line: {line}")
+
 
 def print_stats(log_stats):
     """
@@ -64,8 +65,6 @@ def print_stats(log_stats):
         count = log_stats['status_codes_count'][code]
         if count > 0:
             print(f"{code}: {count}")
-    if log_stats['skipped_lines'] > 0:
-        print(f"Skipped lines: {log_stats['skipped_lines']}")
 
 
 def main():
