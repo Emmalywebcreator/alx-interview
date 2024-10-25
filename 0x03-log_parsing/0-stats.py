@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+Log Parsing Script
+
+This script reads log data from standard input line by line, parses each line
+to extract IP addresses, status codes, and file sizes, and then aggregates
+statistics on the total file size and the count of each status code. The script
+outputs statistics every 10 lines and upon a keyboard interrupt (CTRL + C).
+"""
+
 import sys
 import re
 
