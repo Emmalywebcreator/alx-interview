@@ -3,6 +3,7 @@
 UTF-8 Validation for a dataset
 """
 
+
 def validUTF8(data):
     """Check if a dataset represents a valid UTF-8 encoding."""
     num_bytes = 0
@@ -27,4 +28,3 @@ def validUTF8(data):
             num_bytes -= 1
 
     return num_bytes == 0
-
