@@ -5,11 +5,11 @@ Utf8 that valid a dataset
 
 
 def validUTF8(data):
+    """ Convert integer to binary string, padded to 8 bits"""
     num_bytes = 0
 
     for num in data:
-        """ Convert integer to binary string, padded to 8 bits"""
-        byt_num = f'{num:08b}'
+        byt_num = format(num_bytes, '08B')
 
         if byt_num.startswith('0'):
             continue
