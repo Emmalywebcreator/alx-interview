@@ -9,7 +9,7 @@ def validUTF8(data):
     num_bytes = 0
 
     for byte in data:
-        byt_num = format(byte, '08b')
+        byt_num = format(byte & 0xFF, '08b')
 
         if num_bytes == 0:
             if byt_num.startswith('0'):
