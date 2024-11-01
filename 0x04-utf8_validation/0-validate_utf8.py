@@ -15,11 +15,11 @@ def validUTF8(data):
             if byt_num.startswith('0'):
                 continue
             elif byt_num.startswith('110'):
-                continue
+                num_bytes = 1
             elif byt_num.startswith('1110'):
-                continue
+                num_bytes = 2
             elif byt_num.startswith('11110'):
-                continue
+                num_bytes = 3
             else:
                 return False
         else:
