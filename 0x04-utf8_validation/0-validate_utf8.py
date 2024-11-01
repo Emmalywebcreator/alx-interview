@@ -8,7 +8,7 @@ def validUTF8(data):
     """ Convert integer to binary string, padded to 8 bits"""
 
     for byte in data:
-        byt_num = format(byte, '08B')
+        byt_num = format(byte, '08b')
 
         if byt_num.startswith('0'):
             continue
