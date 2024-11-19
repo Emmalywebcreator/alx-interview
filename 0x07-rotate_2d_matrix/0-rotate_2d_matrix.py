@@ -1,24 +1,21 @@
 #!/usr/bin/python3
 """
-Rotates a 2D matrix by 90 degrees clockwise.
+Rotates a 2D nxn matrix by 90 degrees clockwise.
 """
 
 def rotate_2d_matrix(matrix):
     """
     Rotates the given 2D matrix in-place.
     """
-    print("Original matrix")
-    for row in matrix:
-        print(row)
+    n = len(matrix)
+    if matrix is None or n < 1:
+        return
+    if n == 1:
+        return
+    else:
+        new_matrix = [row[:] for row in matrix]
 
-    transp_matrix = [list(row) for row in zip(*matrix)]
-    print("\nTransposed matrix")
-    for row in transp_matrix:
-        print(row)
-    
-    for i, row in enumerate(transp_matrix):
-        transp_matrix[i] = row[::-1]
-    
-    matrix[:] = transp_matrix
-
-    return rotate_2d_matrix
+        for i in range(0, n):
+            for j in range(0, n):
+                new_matrix[j][n-1-i] = matrix[i][j]
+            return new_matrix
