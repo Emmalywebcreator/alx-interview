@@ -16,11 +16,9 @@ def rotate_2d_matrix(matrix):
     for row in transp_matrix:
         print(row)
     
-    for row in transp_matrix:
-        row.reverse()
+    for i, row in enumerate(transp_matrix):
+        transp_matrix[i] = row[::-1]
     
-    print('\nRotated matrix')
-    for row in transp_matrix:
-        print(row)
+    matrix[:] = transp_matrix
 
     return rotate_2d_matrix
