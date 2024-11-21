@@ -14,8 +14,8 @@ def rotate_2d_matrix(matrix):
         return
     else:
         new_matrix = [row[:] for row in matrix]
-
         for i in range(0, n):
             for j in range(0, n):
                 new_matrix[j][n-1-i] = matrix[i][j]
-            return new_matrix
+        print(new_matrix)
+                
